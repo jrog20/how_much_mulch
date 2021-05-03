@@ -19,9 +19,12 @@ def main():
 
     print("This program calculates the amount of mulch you will need for your garden beds.")
 
-    while input != 0:
+    while True:
         bed_num += 1
+
         length_ft = float(input("Enter the length of garden bed number " + str(bed_num) + " in feet: "))
+        if length_ft == 0:
+            break
         width_ft = float(input("Enter the width of garden bed number " + str(bed_num) + " in feet: "))
 
         area_bed_sqft = length_ft * width_ft
@@ -34,8 +37,12 @@ def main():
 
         print("The cubic feet of mulch needed for garden bed number", bed_num, "is:", volume_bed_cuft)
         print("The cubic yards of mulch needed for garden bed number", bed_num, "is:", volume_bed_cuyd)
+        print("")
 
-        print("Total mulch needed for all garden beds is:", total_beds_volume_cuft, "cubic feet, or", total_beds_volume_cuyd, "cubic yards.")
+    print("")
+    print("The total mulch needed for all garden beds is:", total_beds_volume_cuft, "cubic feet, or",
+      total_beds_volume_cuyd, "cubic yards.")
+    print("")
 
 
 if __name__ == '__main__':
